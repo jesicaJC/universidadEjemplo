@@ -33,7 +33,7 @@ public class AlumnoData { //PRACTICA
             //preparedStatement envian la setencia anterior
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);//que me devuelva la lista de claves generadas
             //Remplazo los ? por los datos del alumno que quiero enviar 
-            ps.setInt(1, alumno.getDni());
+              ps.setInt(1, alumno.getDni());
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));//Date de sql, valueOf lo convierte a DATE
@@ -50,6 +50,7 @@ public class AlumnoData { //PRACTICA
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Se añadio el Alumno /Error al acceder a la tabla Alumno: " + ex.getMessage());
+            
         }
     }
 
